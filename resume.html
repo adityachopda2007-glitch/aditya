@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ data.name }} — Resume</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="resume-root">
+  <div class="resume card">
+    <header class="resume-header">
+      <div>
+        <h1 class="name">{{ data.name }}</h1>
+        <p class="title">{{ data.title }}</p>
+      </div>
+      <div class="contact">
+        <div>{{ data.email }}</div>
+        <div>{{ data.phone }}</div>
+        <div>{{ data.location }}</div>
+      </div>
+    </header>
+
+    {% if data.summary %}
+    <section>
+      <h3>Summary</h3>
+      <p>{{ data.summary }}</p>
+    </section>
+    {% endif %}
+
+    {% if data.education %}
+    <section>
+      <h3>Education</h3>
+      <ul class="bullets">
+        {% for edu in data.education %}
+          <li>{{ edu }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if data.experience %}
+    <section>
+      <h3>Experience</h3>
+      <div class="exp-list">
+        {% for e in data.experience %}
+          <div class="exp-item">
+            <pre>{{ e }}</pre>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if data.projects %}
+    <section>
+      <h3>Projects</h3>
+      <ul class="bullets">
+        {% for p in data.projects %}
+          <li>{{ p }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if data.skills %}
+    <section>
+      <h3>Skills</h3>
+      <p class="skills">{{ data.skills | join(', ') }}</p>
+    </section>
+    {% endif %}
+
+    <footer class="resume-footer">
+      <small>Generated with Auto Resume Generator</small>
+    </footer>
+  </div>
+</body>
+</html>

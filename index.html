@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Auto Resume Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>Auto Resume Generator</h1>
+    <form method="post">
+      <section class="form-row">
+        <label>Name</label>
+        <input name="name" required placeholder="Full name">
+      </section>
+
+      <section class="form-row two-cols">
+        <div>
+          <label>Professional Title</label>
+          <input name="title" placeholder="e.g. Aerospace Engineering Student">
+        </div>
+        <div>
+          <label>Location</label>
+          <input name="location" placeholder="City, Country">
+        </div>
+      </section>
+
+      <section class="form-row two-cols">
+        <div>
+          <label>Email</label>
+          <input name="email" placeholder="email@example.com">
+        </div>
+        <div>
+          <label>Phone</label>
+          <input name="phone" placeholder="+91 9xxxx xxxxx">
+        </div>
+      </section>
+
+      <section class="form-row">
+        <label>Professional Summary</label>
+        <textarea name="summary" rows="4" placeholder="Short summary or objective"></textarea>
+      </section>
+
+      <section class="form-row">
+        <label>Education (one per line)</label>
+        <textarea name="education" rows="4" placeholder="B.Tech in Aerospace Engineering — Institute — 2024"></textarea>
+      </section>
+
+      <section class="form-row">
+        <label>Experience (separate entries with a blank line or new lines)</label>
+        <textarea name="experience" rows="6" placeholder="Role — Company — Dates\n• Bullet points"></textarea>
+      </section>
+
+      <section class="form-row">
+        <label>Skills (comma separated)</label>
+        <input name="skills" placeholder="Python, C++, MATLAB, CAD">
+      </section>
+
+      <section class="form-row">
+        <label>Projects (one per line)</label>
+        <textarea name="projects" rows="4" placeholder="Project title — short description"></textarea>
+      </section>
+
+      <div class="actions">
+        <button type="submit">Generate Resume</button>
+      </div>
+    </form>
+
+    <p class="hint">After generating, use your browser's Print → Save as PDF to export the resume.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+:root{ --maxw: 900px; --accent: #0b5cff; --muted:#666 }
+body{font-family: Inter, system-ui, Arial; margin:24px; color:#111}
+.container{max-width:900px;margin:0 auto}
+.card{background:#fff;padding:20px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+h1{margin:0 0 14px}
+.form-row{margin-bottom:12px}
+.form-row label{display:block;font-weight:600;margin-bottom:6px}
+input[type=text], input, textarea{width:100%;padding:8px;border:1px solid #ddd;border-radius:4px}
+.two-cols{display:flex;gap:12px}
+.two-cols > div{flex:1}
+.actions{text-align:right}
+button{background:var(--accent);color:#fff;padding:10px 14px;border:0;border-radius:6px;cursor:pointer}
+.hint{color:var(--muted);font-size:0.9rem;margin-top:12px}
+
+/* Resume styles */
+.resume-root{display:flex;justify-content:center;padding:24px}
+.resume{width:var(--maxw)}
+.resume-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #eee;padding-bottom:12px;margin-bottom:12px}
+.name{font-size:28px;margin:0}
+.title{color:var(--muted);margin-top:6px}
+.contact{font-size:0.95rem;text-align:right;color:var(--muted)}
+section{margin-bottom:12px}
+section h3{margin:0 0 8px;font-size:1rem;color:var(--accent)}
+.bullets{padding-left:18px}
+.exp-list pre{white-space:pre-wrap;margin:0;background:transparent}
+.skills{letter-spacing:0.2px}
+.resume-footer{text-align:center;margin-top:18px;color:var(--muted)}
+
+@media print{
+  body{margin:0}
+  .card{box-shadow:none;border-radius:0}}
